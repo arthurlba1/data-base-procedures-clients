@@ -1,5 +1,16 @@
 <template>
-    <client-card-component />
+    <v-container
+        fill-height
+        fluid
+    >
+        <v-row
+            align="center"
+            justify="center"
+            no-gutters
+        >
+            <client-card-component />
+        </v-row>
+    </v-container>
 </template>
 
 <script>
