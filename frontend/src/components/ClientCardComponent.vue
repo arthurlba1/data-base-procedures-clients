@@ -16,12 +16,37 @@
                 </v-toolbar-title>
             </v-toolbar>
         </v-card-title>
+        <v-card-actions>
+            <client-menu-component
+                :crud="options"
+            />
+        </v-card-actions>
+        <v-card-text>
+            <v-list>
+                <client-list-component
+                />
+            </v-list>
+        </v-card-text>
     </v-card>
 </template>
 
 <script>
+import ClientMenuComponent from '../components/ClientMenuComponent.vue'
+import ClientListComponent from './ClientListComponent.vue'
 
 export default {
-    name: 'ClientCardComponent'
+    name: 'ClientCardComponent',
+    components: {
+        ClientMenuComponent,
+        ClientListComponent
+    },
+    data: () => ({
+       options: [
+            'Create Client',
+            'View Client',
+            'Update Client',
+            'Delete Client'
+        ],
+    }),
 }
 </script>
