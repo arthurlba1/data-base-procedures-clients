@@ -9,7 +9,7 @@
                 :to="url"
                 v-on="on"
             >
-                <v-icon>{{ iconName }}</v-icon>
+                <v-icon color="grey lighten-2">{{ iconName }}</v-icon>
             </v-btn>
         </template>
         <span>{{iconLabel}}</span>
