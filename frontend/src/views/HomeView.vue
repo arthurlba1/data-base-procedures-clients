@@ -4,22 +4,20 @@
         fluid
     >
         <v-row
-            align="center"
-            justify="center"
             no-gutters
         >
-            <client-card-component />
+            <navbar-component />
         </v-row>
     </v-container>
 </template>
 
 <script>
-import ClientCardComponent from '../components/ClientCardComponent.vue'
+import NavbarComponent from '../components/NavbarComponent.vue'
 
 export default {
     name: 'HomeView',
-    components: { 
-        ClientCardComponent
+    components: {
+        NavbarComponent
     }
 }
 </script>
