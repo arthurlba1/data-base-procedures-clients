@@ -19,7 +19,7 @@
         <router-icon-component
             iconName="mdi-account-plus"
             iconLabel="Create Client"
-            url="/create-list"
+            url="/create-client"
         />
         <router-icon-component
             iconName="mdi-account-edit"
