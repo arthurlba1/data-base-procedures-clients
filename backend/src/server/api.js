@@ -172,8 +172,8 @@ app.post('/makeOrder', function (req, res) {
     .execute('create_order')
   })
   .then((result) => {
+    let orderId = result.recordset[0].OrderID
     res.json(result.recordsets)
-    sql.close()
     req.body.Products.forEach(
       function(currentValue) {
         sql
@@ -181,27 +181,28 @@ app.post('/makeOrder', function (req, res) {
         .then((pool) => {
           return pool
           .request()
-          .input('OrderID', sql.Int, parseInt(res.json(result.recordsets).body.OrderID))
+          .input('OrderID', sql.Int, parseInt(orderId))
           .input('ProductID', sql.Int, parseInt(currentValue.ProductID))
           .input('UnitPrice', sql.Money, parseInt(currentValue.UnitPrice))
           .input('Quantity', sql.SmallInt, parseInt(currentValue.Quantity))
           .input('Discount', sql.Real, parseFloat(currentValue.Discount))
           .execute('connet_order_products')
         })
-        .then(() => {
-          sql.close()
-        })
         .catch((err) => {
           console.log(err.message)
-          sql.close()
         })
       }
     )
+  })
+  .then(() => {
     res.status(200)
+    sql.close()
   })
   .catch((err) => {
     console.log(err.message)
     sql.close()
   })
+
+  
 })
 
