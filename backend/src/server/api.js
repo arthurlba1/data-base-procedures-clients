@@ -38,7 +38,7 @@ app.get('/getCustomers', function (req, res){
     .execute('get_all_customers')
   })
   .then((result) => {
-    res.json(result.recordsets)
+    res.json(result.recordset)
     res.status(200)
     sql.close()
   })
