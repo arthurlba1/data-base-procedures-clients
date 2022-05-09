@@ -3,11 +3,7 @@
         <v-col cols="12">
             <v-list-item>
                 <v-container class="pa-0">
-                    <client-sub-list-component
-                        v-for="(name, index) in clients"
-                        :key="index"
-                        :clientList="name"
-                    />
+                    <client-sub-list-component/>
                 </v-container>
             </v-list-item>
         </v-col>
@@ -21,11 +17,5 @@ export default {
 
     name: 'ClientListComponent',
     components: { ClientSubListComponent },
-    props: {
-        clients: {
-            type: Object,
-            required: true
-        }
-    },
 }
 </script>
