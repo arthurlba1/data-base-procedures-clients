@@ -1,12 +1,10 @@
 <template>
     <v-container fluid>
-            <v-row
+        <v-row
                 no-gutters
                 justify="center"
             >
-                <client-list-card-component
-                    :clients="clients"
-                />
+                <client-list-card-component/>
             </v-row>
         </v-container>
 </template>
@@ -18,6 +16,11 @@ export default {
     name: 'ClientListView',
     components: {
         ClientListCardComponent
-    }
+    },
+    data: function() {
+        return {
+            clients: null
+        }
+    },
 }
 </script>
