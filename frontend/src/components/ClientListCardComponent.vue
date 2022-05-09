@@ -1,6 +1,5 @@
 <template>
     <v-card
-        width="1500"
         elevation="4"
     >
         <v-card-title class="pa-0">
@@ -23,9 +22,7 @@
             <v-row no-gutters>
                 <v-col cols="12">
                     <v-list>
-                        <client-list-component
-                            :clients="clients"
-                        />
+                        <client-list-component/>
                     </v-list>
                 </v-col>
             </v-row>
@@ -40,12 +37,6 @@ export default {
     name: 'ClientListCardComponent',
     components: {
         ClientListComponent
-    },
-    props: {
-        clients: {
-            type: Object,
-            required: true
-        }
     },
 }
 </script>
