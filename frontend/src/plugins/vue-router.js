@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import ClientListView from '../views/ClientListView'
 import CreateClientView from '../views/CreateClientView'
 import HomeView from '../views/HomeView'
+import UpdateClientView from '../views/UpdateClientView'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,12 @@ const routes = [
         path: '/create-client',
         name: 'Create Client',
         component: CreateClientView
+    },
+    {
+        path: '/update-client',
+        name: 'Update Client',
+        component: UpdateClientView
+    },
     }
 ]
 
