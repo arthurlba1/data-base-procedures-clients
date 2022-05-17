@@ -6,6 +6,7 @@ import CreateClientView from '../views/CreateClientView'
 import HomeView from '../views/HomeView'
 import UpdateClientView from '../views/UpdateClientView'
 import DeleteClientView from '../views/DeleteClientView'
+import BuyProductsView from '../views/BuyProductsView'
 
 Vue.use(VueRouter)
 
@@ -34,6 +35,11 @@ const routes = [
         path: '/delete-client',
         name: 'Delete Client',
         component: DeleteClientView
+    },
+    {
+        path: '/buy-products',
+        name: 'Buy Products',
+        component: BuyProductsView
     }
 ]
 

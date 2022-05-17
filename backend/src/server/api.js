@@ -48,6 +48,44 @@ app.get('/getCustomers', function (req, res){
   })
 })
 
+app.get('/getProducts', function (req, res){
+  sql
+  .connect(sqlConfig)
+  .then((pool) => {
+    return pool
+    .request()
+    .execute('get_all_products')
+  })
+  .then((result) => {
+    res.json(result.recordset)
+    res.status(200)
+    sql.close()
+  })
+  .catch((err) => {
+    console.log(err.message)
+    sql.close()
+  })
+})
+
+app.get('/getEmployees', function (req, res){
+  sql
+  .connect(sqlConfig)
+  .then((pool) => {
+    return pool
+    .request()
+    .execute('get_all_employees')
+  })
+  .then((result) => {
+    res.json(result.recordset)
+    res.status(200)
+    sql.close()
+  })
+  .catch((err) => {
+    console.log(err.message)
+    sql.close()
+  })
+})
+
 app.post('/createCustomer', function (req, res){
   let createUser =
   `

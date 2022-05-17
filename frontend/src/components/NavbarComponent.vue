@@ -31,6 +31,11 @@
             iconLabel="Delete Client"
             url="/delete-client"
         />
+        <router-icon-component
+            iconName="mdi-cart"
+            iconLabel="Buy Products"
+            url="/buy-products"
+        />
     </v-app-bar>
 </template>
 
